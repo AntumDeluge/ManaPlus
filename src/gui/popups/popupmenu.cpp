@@ -229,18 +229,22 @@ void PopupMenu::showPopup(const int x, const int y, const Being *const being)
     {
         case ActorType::Player:
         {
-            // TRANSLATORS: popup menu item
-            // TRANSLATORS: trade with player
-            mBrowserBox->addRow("/trade 'NAME'", _("Trade"));
-            // TRANSLATORS: popup menu item
-            // TRANSLATORS: trade attack player
-            mBrowserBox->addRow("/attack 'NAME'", _("Attack"));
-            // TRANSLATORS: popup menu item
-            // TRANSLATORS: send whisper to player
-            mBrowserBox->addRow("/whispertext 'NAME'", _("Whisper"));
-            addMailCommands();
+            if (being != localPlayer)
+            {
+                // TRANSLATORS: popup menu item
+                // TRANSLATORS: trade with player
+                mBrowserBox->addRow("/trade 'NAME'", _("Trade"));
+                // TRANSLATORS: popup menu item
+                // TRANSLATORS: trade attack player
+                mBrowserBox->addRow("/attack 'NAME'", _("Attack"));
+                // TRANSLATORS: popup menu item
+                // TRANSLATORS: send whisper to player
+                mBrowserBox->addRow("/whispertext 'NAME'", _("Whisper"));
+                addMailCommands();
+            }
             addGmCommands();
-            mBrowserBox->addSeparator("##3---");
+            if (being != localPlayer)
+                mBrowserBox->addSeparator("##3---");
 
 #ifdef TMWA_SUPPORT
             if (Net::getNetworkType() == ServerType::TMWATHENA)
@@ -252,10 +256,13 @@ void PopupMenu::showPopup(const int x, const int y, const Being *const being)
             }
 #endif  // TMWA_SUPPORT
 
-            addPlayerRelation(name);
-            mBrowserBox->addSeparator("##3---");
+            if (being != localPlayer)
+            {
+                addPlayerRelation(name);
+                mBrowserBox->addSeparator("##3---");
 
-            addFollow();
+                addFollow();
+            }
             addPartyName(being->getPartyName());
 
             const Guild *const guild1 = being->getGuild();
@@ -266,10 +273,20 @@ void PopupMenu::showPopup(const int x, const int y, const Being *const being)
                 {
                     if (guild1->getId() == guild2->getId())
                     {
-                        mBrowserBox->addRow("/kickguild 'NAME'",
+                        if (being != localPlayer)
+                        {
+                            mBrowserBox->addRow("/kickguild 'NAME'",
                             // TRANSLATORS: popup menu item
                             // TRANSLATORS: kick player from guild
                             _("Kick from guild"));
+                        }
+                        else
+                        {
+                        mBrowserBox->addRow("/kickguild 'NAME'",
+                            // TRANSLATORS: popup menu item
+                            // TRANSLATORS: leave guild
+                            _("Leave guild"));
+                        }
                         if (guild2->getServerGuild())
                         {
                             mBrowserBox->addRow(strprintf(
@@ -312,14 +329,17 @@ void PopupMenu::showPopup(const int x, const int y, const Being *const being)
                 }
             }
 
-            // TRANSLATORS: popup menu item
-            // TRANSLATORS: set player invisible for self by id
-            mBrowserBox->addRow("/nuke 'NAME'", _("Nuke"));
-            // TRANSLATORS: popup menu item
-            // TRANSLATORS: move to player location
-            mBrowserBox->addRow("/navigateto 'NAME'", _("Move"));
-            addPlayerMisc();
-            addBuySell(being);
+            if (being != localPlayer)
+            {
+                // TRANSLATORS: popup menu item
+                // TRANSLATORS: set player invisible for self by id
+                mBrowserBox->addRow("/nuke 'NAME'", _("Nuke"));
+                // TRANSLATORS: popup menu item
+                // TRANSLATORS: move to player location
+                mBrowserBox->addRow("/navigateto 'NAME'", _("Move"));
+                addPlayerMisc();
+                addBuySell(being);
+            }
             addChat(being);
             break;
         }
