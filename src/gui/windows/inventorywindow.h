@@ -189,6 +189,7 @@ class InventoryWindow final : public Window,
         Button *mCartButton;
         Button *mEquipmentButton;
         Button *mStoreButton;
+        Button *mStoreAllButton;
         Button *mRetrieveButton;
         Button *mInvCloseButton;
 

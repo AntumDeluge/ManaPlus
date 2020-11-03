@@ -98,6 +98,7 @@ InventoryWindow::InventoryWindow(Inventory *const inventory) :
     mCartButton(nullptr),
     mEquipmentButton(nullptr),
     mStoreButton(nullptr),
+    mStoreAllButton(nullptr),
     mRetrieveButton(nullptr),
     mInvCloseButton(nullptr),
     mWeightBar(nullptr),
@@ -231,6 +232,12 @@ InventoryWindow::InventoryWindow(Inventory *const inventory) :
                 "drop",
                 BUTTON_SKIN,
                 this);
+            mStoreAllButton = new Button(this,
+                // TRANSLATORS: storage button
+                _("Store all"),
+                "storeall",
+                BUTTON_SKIN,
+                this);
             mOutfitButton = new Button(this,
                 // TRANSLATORS: inventory outfits button
                 _("O"),
@@ -280,6 +287,8 @@ InventoryWindow::InventoryWindow(Inventory *const inventory) :
             place(0, 2, invenScroll, 11, 1).setPadding(3);
             place(0, 3, mUseButton, 1, 1);
             place(1, 3, mDropButton, 1, 1);
+            place(2, 3, mStoreAllButton, 1, 1);
+
             ContainerPlacer placer = getPlacer(10, 3);
             placer(0, 0, mShopButton, 1, 1);
             placer(1, 0, mOutfitButton, 1, 1);
@@ -503,6 +512,22 @@ void InventoryWindow::action(const ActionEvent &event)
                 0);
         }
     }
+    else if (eventId == "storeall")
+    {
+        if (storageWindow != nullptr)
+        {
+            for (int i = 0; i < mInventory->getNumberOfSlotsUsed(); i++)
+            {
+                Item *const item = mInventory->getItem(i);
+                if (item == nullptr)
+                    continue;
+                inventoryHandler->moveItem2(InventoryType::Inventory,
+                    item->getInvIndex(),
+                    item->getQuantity(),
+                    InventoryType::Storage);
+            }
+        }
+    }
     else if (eventId == "sort")
     {
         mItems->setSortType(mSortDropDown->getSelected());
@@ -520,7 +545,6 @@ void InventoryWindow::action(const ActionEvent &event)
         mItems->setFilter(ItemDB::getTagId(tagName));
         return;
     }
-
     Item *const item = mItems->getSelectedItem();
 
     if (item == nullptr)
@@ -984,8 +1008,13 @@ void InventoryWindow::updateDropButton()
         // TRANSLATORS: inventory button
         mDropButton->setCaption(_("Store"));
     }
+    if (isStorageActive())
+    {
+        mStoreAllButton->setVisible(Visible_true);
+    }
     else
     {
+        mStoreAllButton->setVisible(Visible_false);
         const Item *const item = mItems->getSelectedItem();
         if ((item != nullptr) && item->getQuantity() > 1)
         {
