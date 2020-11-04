@@ -273,6 +273,18 @@ Setup_Misc::Setup_Misc(const Widget2 *const widget) :
         MainConfig_true);
 
     // TRANSLATORS: settings option
+    new SetupItemIntTextField(_("Increase your effective Walk Delay"),
+        // TRANSLATORS: settings description
+        _("Walk slower than your maximum allowed speed.\n"
+            "This can decrease desync when autonav is used over "
+            "long distances, and makes it easier for others to "
+            "autofollow you.\n"
+            "0 is off, 15~20 is recommended for evol2 servers."),
+        "playerSpeedAdjustment",
+        this, "playerSpeedAdjustmentEvent", 0, 100,
+        MainConfig_false);
+
+    // TRANSLATORS: settings option
     new SetupItemTextField(_("Crazy move A program"), "",
         "crazyMoveProgram", this, "crazyMoveProgramEvent",
         MainConfig_true, UseBase64_false);

@@ -161,6 +161,7 @@ CheckBox::~CheckBox()
         if (theme != nullptr)
             theme->unload(mSkin);
     }
+    removeMouseListener(this);
 }
 
 void CheckBox::draw(Graphics *const graphics)

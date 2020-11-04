@@ -140,6 +140,7 @@ bool Being::mEnableReorderSprites = true;
 bool Being::mHideErased = false;
 Move Being::mMoveNames = Move_false;
 bool Being::mUseDiagonal = true;
+int  Being::mPlayerSpeedAdjustment = 0;
 BadgeDrawType::Type Being::mShowBadges = BadgeDrawType::Top;
 int Being::mAwayEffect = -1;
 VisibleNamePos::Type Being::mVisibleNamePos = VisibleNamePos::Bottom;
@@ -1812,6 +1813,9 @@ void Being::nextTile() restrict2
         mSpeed = mWalkSpeed;
     }
 
+    if (this == localPlayer)
+        mSpeed = mSpeed + mPlayerSpeedAdjustment;
+
     if (mX != pos.x || mY != pos.y)
     {
         mOldHeight = mMap->getHeightOffset(mX, mY);
@@ -3448,6 +3452,8 @@ void Being::reReadConfig()
         mHideErased = config.getBoolValue("hideErased");
         mMoveNames = fromBool(config.getBoolValue("moveNames"), Move);
         mUseDiagonal = config.getBoolValue("useDiagonalSpeed");
+        mPlayerSpeedAdjustment =
+            serverConfig.getIntValue("playerSpeedAdjustment");
         mShowBadges = static_cast<BadgeDrawType::Type>(
             config.getIntValue("showBadges"));
         mVisibleNamePos = static_cast<VisibleNamePos::Type>(

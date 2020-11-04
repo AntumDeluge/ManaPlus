@@ -1348,6 +1348,7 @@ class Being notfinal : public ActorSprite,
         static bool mHideErased;
         static Move mMoveNames;
         static bool mUseDiagonal;
+        static int mPlayerSpeedAdjustment;
         static BadgeDrawType::Type mShowBadges;
         static int mAwayEffect;
         static VisibleNamePos::Type mVisibleNamePos;

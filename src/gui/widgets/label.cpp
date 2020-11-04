@@ -144,7 +144,7 @@ void Label::init()
         mPadding = mSkin->getPadding();
     else
         mPadding = 0;
-    setSelectable(false);
+    setSelectable(true);
 }
 
 void Label::draw(Graphics *const graphics)
