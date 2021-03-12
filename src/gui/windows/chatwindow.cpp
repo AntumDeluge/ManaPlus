@@ -1662,8 +1662,11 @@ bool ChatWindow::resortChatLog(std::string line,
         {
             replaceAll(tmpNick, "#", "_");
             replaceAll(tmpNick, "%", "_");
-            // TRANSLATORS: error message
-            line = _("Broken nick detected: ") + line;
+            if (Net::getNetworkType() == ServerType::TMWATHENA)
+            {
+                // TRANSLATORS: error message
+                line = _("Broken nick detected: ") + line;
+            }
             own = ChatMsgType::BY_SERVER;
         }
         const size_t idx = line.find(": \302\202");
