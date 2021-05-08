@@ -303,14 +303,6 @@ void Client::gameInit()
     Dirs::initRootDir();
     Dirs::initHomeDir();
 
-#ifndef ENABLE_COMMANDLINEPASSWORD
-    if (!settings.options.password.empty())
-    {
-        settings.options.password.clear();
-        logger->log("Command line password parameter disabled.");
-    }
-#endif
-
     // Configure logger
     if (!settings.options.logFileName.empty())
     {
