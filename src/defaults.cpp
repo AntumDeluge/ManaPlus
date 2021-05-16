@@ -119,7 +119,7 @@ void setConfigDefaults(Configuration &cfg)
     AddDEF("syncPlayerMove", true);
     AddDEF("syncPlayerMoveDistance", 5);
     AddDEF("syncPlayerMoveDistanceLegacy", 15);
-    AddDEF("playerSpeedAdjustment", 0);
+    AddDEF("playerSpeedAdjustment", 10);
     AddDEF("drawPath", false);
     AddDEF("moveToTargetType", 10);
     AddDEF("crazyMoveProgram", "mumrsonmdmlon");
