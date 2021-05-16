@@ -281,7 +281,7 @@ Setup_Misc::Setup_Misc(const Widget2 *const widget) :
             "autofollow you.\n"
             "0 is off, 15~20 is recommended for evol2 servers."),
         "playerSpeedAdjustment",
-        this, "playerSpeedAdjustmentEvent", 0, 100,
+        this, "playerSpeedAdjustmentEvent", 0, 30,
         MainConfig_false);
 
     // TRANSLATORS: settings option
