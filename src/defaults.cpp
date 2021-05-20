@@ -502,9 +502,9 @@ void setBrandingDefaults(Configuration &cfg)
     AddDEF("defaultPort", DEFAULT_PORT);
     AddDEF("defaultServerType", "tmwathena");
     AddDEF("onlineServerList",
-           "http://manaplus.org/serverlist.xml");
+           "https://manaplus.germantmw.de/manaplus/serverlist.xml");
     AddDEF("onlineServerList2",
-           "http://www.manaplus.org/serverlist.xml");
+           "https://www.manaplus.germantmw.de/manaplus/serverlist.xml");
     AddDEF("onlineServerFile", "serverlistplus.xml");
     AddDEF("appShort", "mana");
     AddDEF("screenshots", "ManaPlus");
@@ -533,15 +533,16 @@ void setBrandingDefaults(Configuration &cfg)
     AddDEF("androidDownloadUrl", "https://play.google.com/store/apps/details"
         "?id=org.evolonline.beta.manaplus");
     AddDEF("androidDownloadText", "Google Play");
-    AddDEF("otherDownloadUrl", "http://manaplus.org/");
-    AddDEF("otherDownloadText", "http://manaplus.org/");
-    AddDEF("windowsDownloadUrl", "http://download.manaplus.org/"
-        "manaplus/download/manaplus-win32.exe");
+    AddDEF("otherDownloadUrl", "https://manaplus.germantmw.de/");
+    AddDEF("otherDownloadText", "https://manaplus.germantmw.de/");
+    AddDEF("windowsDownloadUrl", "https://manaplus.germantmw.de/"
+        "manaplus/package/windows32/");
     AddDEF("windowsDownloadText", "download here");
-    AddDEF("updateMirror1", "http://manaplus.org/update/");
-    AddDEF("updateMirror2", "http://www.manaplus.org/update/");
-    AddDEF("updateMirror3", "http://www2.manaplus.org/update/");
-    AddDEF("updateMirror4", "http://www3.manaplus.org/update/");
+    AddDEF("updateMirror1", "https://manaplus.germantmw.de/manaplus/updates/");
+    AddDEF("updateMirror2",
+        "https://www.manaplus.germantmw.de/manaplus/updates/");
+    AddDEF("updateMirror3", "");
+    AddDEF("updateMirror4", "");
     AddDEF("updateMirror5", "");
     AddDEF("updateMirror6", "");
     AddDEF("updateMirror7", "");
