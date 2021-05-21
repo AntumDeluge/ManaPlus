@@ -1,4 +1,5 @@
 stages:
+  - lint
   - prebuild
   - build
 
@@ -288,7 +289,7 @@ gcc-8_unittestsbin:
               libsdl-gfx1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-net1.2-dev libsdl-ttf2.0-dev
 
 mplint:
-  stage: prebuild
+  stage: lint
   script:
   - ./tools/ci/jobs/mplint.sh src
   - ./tools/ci/jobs/mplint.sh po
@@ -299,7 +300,7 @@ mplint:
               make autoconf automake autopoint gettext
 
 linters:
-  stage: prebuild
+  stage: lint
   script:
   - ./tools/ci/jobs/pngcheck.sh
   - ./tools/ci/jobs/imagemagiccheck.sh
