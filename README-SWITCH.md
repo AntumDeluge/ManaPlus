@@ -38,7 +38,7 @@ Building
 ```
 git clone https://github.com/Cpasjuste/ManaPlus.git
 cd ManaPlus
-cp CMakeLists.txt.switch CMakeLists.txt
+cp packaging/switch/CMakeLists.txt.switch CMakeLists.txt
 mkdir cmake-build-release && cd cmake-build-release
 cmake -DPLATFORM_SWITCH=ON -DCMAKE_BUILD_TYPE=Release ../
 make ManaPlus.nro

@@ -7,13 +7,11 @@ THE MANA PLUS CLIENT
   - See AUTHORS file for a list
 
  Build status:
-  Gitlab CI: https://gitlab.com/manaplus/manaplus/badges/master/build.svg
-  Circle CI: https://circleci.com/gh/ManaPlus/ManaPlus/tree/master.svg?style=svg
-  Semaphore CI https://semaphoreci.com/4144/manaplus
-  Travis: https://travis-ci.org/ManaPlus/ManaPlus.svg?branch=master
-  Azure CI: windows: https://dev.azure.com/manaplus/ManaPlus/_build/latest?definitionId=1
-            macosx: https://dev.azure.com/manaplus/ManaPlus/_build/latest?definitionId=2
-  Coverage: http://stats.manaplus.org/gcov/gcc-6.html
+  ManaPlus CI: https://gitlab.com/themanaworld/manaplus/manaplus/badges/master/pipeline.svg
+  Windows: https://gitlab.com/themanaworld/manaplus/docker-windows-builder/badges/master/pipeline.svg
+  AppImg: https://gitlab.com/themanaworld/manaplus/appimg-builder/badges/master/pipeline.svg
+  deb: https://gitlab.com/themanaworld/manaplus/appimg-builder/badges/master/pipeline.svg
+  Coverage: https://gitlab.com/themanaworld/manaplus/manaplus/badges/master/coverage.svg
   Doxygen: http://stats.manaplus.org/docs/index.html
   Coverity: https://scan.coverity.com/projects/manaplus
 
@@ -159,7 +157,7 @@ Other:
 
 If you're having issues with this client, feel free to report them to us.
 You can report on forum (http://forums.themanaworld.org/viewforum.php?f=12),
-bugtracker (https://gitlab.com/manaplus/manaplus/issues/) or IRC on irc.freenode.net in the #manaplus channel.
+bugtracker (https://gitlab.com/themanaworld/manaplus/manaplus/issues/) or IRC on irc.freenode.net in the #germantmw channel.
 
 If you have feedback about a specific game that uses the ManaPlus client, be sure
 to contact the developers of the game instead.
@@ -175,4 +173,3 @@ they not have any rights to do so.
 This hostings have rights to remove ManaPlus repositories if they want violate given licenses.
 
 ManaPlus main repository hosted on https://gitlab.com/manaplus/manaplus/
-

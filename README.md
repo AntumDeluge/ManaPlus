@@ -6,8 +6,13 @@ Version: 1.9.3.23        Date: 2019-03-23
 
 ### Build status
 
-Gitlab CI: [![gitlab build status](https://gitlab.com/manaplus/manaplus/badges/master/build.svg)](https://gitlab.com/manaplus/manaplus/commits/master)
+ - ManaPlus CI: [![gitlab build status](https://gitlab.com/themanaworld/manaplus/manaplus/badges/master/pipeline.svg?key_text=master)](https://gitlab.com/themanaworld/manaplus/manaplus/commits/master)
 
+ - Downloads: [![gitlab windows build](https://gitlab.com/themanaworld/manaplus/docker-windows-builder/badges/master/pipeline.svg?key_text=Windows+Build&key_width=150px)](https://gitlab.com/themanaworld/manaplus/docker-windows-builder/commits/master),
+ [![gitlab appimg build](https://gitlab.com/themanaworld/manaplus/appimg-builder/badges/master/pipeline.svg?key_text=AppImg+Build&key_width=150px)](https://gitlab.com/themanaworld/manaplus/appimg-builder/commits/master),
+ [![gitlab .deb build](https://gitlab.com/themanaworld/manaplus/appimg-builder/badges/master/pipeline.svg?key_text=.deb+Build&key_width=150px)](https://gitlab.com/themanaworld/manaplus/appimg-builder/commits/master)
+
+<!--
 Cicle CI: [![CircleCI](https://circleci.com/gh/ManaPlus/ManaPlus/tree/master.svg?style=svg)](https://circleci.com/gh/ManaPlus/ManaPlus/tree/master)
 
 Semaphore CI: [![Build Status](https://semaphoreci.com/api/v1/4144/manaplus/branches/master/badge.svg)](https://semaphoreci.com/4144/manaplus)
@@ -16,12 +21,14 @@ Travis CI: [![travis build status](https://travis-ci.org/ManaPlus/ManaPlus.svg?b
 
 Azure CI: [![Build Status macosx](https://dev.azure.com/manaplus/ManaPlus/_apis/build/status/ManaPlus%20macosx)](https://dev.azure.com/manaplus/ManaPlus/_build/latest?definitionId=2)
           [![Build Status windows](https://dev.azure.com/manaplus/ManaPlus/_apis/build/status/ManaPlus%20main)](https://dev.azure.com/manaplus/ManaPlus/_build/latest?definitionId=1)
+-->
 
-Coverage: [![coverage report](https://gitlab.com/manaplus/manaplus/badges/master/coverage.svg)](http://stats.manaplus.org/gcov/gcc-6.html)
+ - Coverage: ![coverage report](https://gitlab.com/themanaworld/manaplus/manaplus/badges/master/coverage.svg) <!-- no pipeline rn -->
 
-Doxygen: [![doxygen](https://img.shields.io/badge/Docs-Doxygen/manaplus-blue.svg)](http://stats.manaplus.org/docs/index.html)
+ - Doxygen: ![doxygen](https://img.shields.io/badge/Docs-Doxygen-blue.svg) <!-- no pipeline rn -->
 
-Coverity: [![coverity](https://scan.coverity.com/projects/318/badge.svg)](https://scan.coverity.com/projects/manaplus)
+ - Coverity: ![coverity](https://scan.coverity.com/projects/318/badge.svg) <!-- no pipeline rn -->
+
 
 ### Development team:
  - See [AUTHORS](AUTHORS) file for a list
@@ -164,9 +171,9 @@ Whispers:
 
 If you're having issues with this client, feel free to report them to us.
 You can report on [![forum](https://img.shields.io/badge/forum-forums.themanaworld.org-yellow.svg)](http://forums.themanaworld.org/viewforum.php?f=12),
-[bugtracker](https://gitlab.com/manaplus/manaplus/issues/) or
-[![IRC](https://img.shields.io/badge/IRC-FreeNode/manaplus-yellow.svg)](webchat.freenode.net/?channels=manaplus)
-on irc.freenode.net in the #manaplus channel.
+[![Issues](https://badgen.net/gitlab/open-issues/themanaworld%2fmanaplus/manaplus?label=Issues)](https://gitlab.com/themanaworld/manaplus/manaplus/issues/),
+[![IRC](https://img.shields.io/badge/IRC-FreeNode/germantmw-yellow.svg)](webchat.freenode.net/?channels=germantmw) or
+![discord](https://shields.io/discord/775612630836445206.svg?label=Discord)
 
 If you have feedback about a specific game that uses the ManaPlus client, be sure
 to contact the developers of the game instead.
