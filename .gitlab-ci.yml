@@ -1,6 +1,7 @@
 stages:
   - lint
   - prebuild
+  - pages
   - build
 
 # with :; prevent from run it on windows
@@ -38,6 +39,15 @@ variables:
   artifacts:
     paths:
     - logs
+    when: always
+    expire_in: 3 week
+  dependencies: []
+
+.job-pages: &job-pages
+  artifacts:
+    paths:
+    - logs
+    - public
     when: always
     expire_in: 3 week
   dependencies: []
@@ -191,7 +201,7 @@ gcc-10_default:
   - ./tools/ci/scripts/rundyecmd.sh
   <<: *job-push
   variables:
-    LOGFILE: gcc6.log
+    LOGFILE: gcc10.log
     CC: gcc-10
     CXX: g++-10
     CXXFLAGS: "-Wall -Wextra"
@@ -343,6 +353,48 @@ gcc-5_h_all_i386:
               make autoconf automake autopoint gettext 
               libxml2-dev libcurl4-gnutls-dev libpng-dev 
               libsdl-gfx1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-net1.2-dev libsdl-ttf2.0-dev
+  tags:
+    - docker
+
+gcov_gcc6:
+  stage: pages
+  image: debian:stretch
+  script:
+  - mkdir -p public/coverage/
+  - ./tools/ci/scripts/patchsdl1.sh
+  - ./tools/ci/jobs/gcc6_tests_gcov.sh --without-dyecmd --without-manaplusgame
+  <<: *job-pages
+  variables:
+    PACKAGES: gcc-6 g++-6 
+              make autoconf automake autopoint gettext 
+              libxml2-dev libcurl4-gnutls-dev libpng-dev 
+              libsdl-gfx1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-net1.2-dev libsdl-ttf2.0-dev 
+              gcovr
+              git-core valgrind
+  coverage: /^\s*lines:\s*\d+.\d+\%/
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+    name: ${CI_JOB_NAME}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}
+    reports:
+      cobertura: public/coverage/gcc6.xml
+  tags:
+    - docker
+
+doxygen:
+  stage: pages
+  image: debian:stretch
+  script:
+  - ./tools/ci/scripts/patchsdl1.sh
+  - ./tools/ci/jobs/doxygen.sh
+  - mv doxygen public/
+  <<: *job-pages
+  variables:
+    PACKAGES: doxygen graphviz 
+              libxml2-dev libcurl4-gnutls-dev libpng-dev 
+              libsdl-gfx1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-net1.2-dev libsdl-ttf2.0-dev
+              git-core
   tags:
     - docker
 
