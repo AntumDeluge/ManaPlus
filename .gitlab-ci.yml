@@ -1,8 +1,8 @@
 stages:
   - lint
   - prebuild
-  - pages
   - build
+  - deploy
 
 # with :; prevent from run it on windows
 before_script:
@@ -357,7 +357,7 @@ gcc-5_h_all_i386:
     - docker
 
 gcov_gcc6:
-  stage: pages
+  stage: deploy
   image: debian:stretch
   script:
   - mkdir -p public/coverage/
@@ -383,7 +383,7 @@ gcov_gcc6:
     - docker
 
 doxygen:
-  stage: pages
+  stage: deploy
   image: debian:stretch
   script:
   - ./tools/ci/scripts/patchsdl1.sh
