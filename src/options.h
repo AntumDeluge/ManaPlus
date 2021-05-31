@@ -67,7 +67,8 @@ struct Options final
         ipc(false),
         hideCursor(false),
         error(false),
-        validate(false)
+        validate(false),
+        uniqueSession(false)
     {}
 
     A_DELETE_COPY(Options)
@@ -100,6 +101,7 @@ struct Options final
     bool hideCursor;
     bool error;
     bool validate;
+    bool uniqueSession;
 };
 
 #endif  // OPTIONS_H
