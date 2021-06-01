@@ -56,71 +56,75 @@ static void printHelp()
         _("Options:") <<
         std::endl <<
         // TRANSLATORS: command line help
-        _("  -l --log-file       : Log file to use") << std::endl <<
+        _("  -l --log-file <arg>       : Log file to use") << std::endl <<
         // TRANSLATORS: command line help
-        _("  -a --chat-log-dir   : Chat log dir to use") << std::endl <<
+        _("  -a --chat-log-dir <arg>   : Chat log dir to use") << std::endl <<
         // TRANSLATORS: command line help
-        _("  -v --version        : Display the version") << std::endl <<
+        _("  -v --version              : Display the version") << std::endl <<
         // TRANSLATORS: command line help
-        _("  -h --help           : Display this help") << std::endl <<
+        _("  -h --help                 : Display this help") << std::endl <<
         // TRANSLATORS: command line help
-        _("  -C --config-dir     : Configuration directory to use") <<
+        _("  -C --config-dir <arg>     : Configuration directory to use") <<
         std::endl <<
         // TRANSLATORS: command line help
-        _("  -U --username       : Login with this username") <<
+        _("  -U --username <arg>       : Login with this username") <<
         std::endl <<
         // TRANSLATORS: command line help
-        _("  -P --password       : Login with this password") <<
+        _("  -P --password <arg>       : Login with this password") <<
         std::endl <<
         // TRANSLATORS: command line help
-        _("  -c --character      : Login with this character") <<
+        _("  -c --character <arg>      : Login with this character") <<
         std::endl <<
         // TRANSLATORS: command line help
-        _("  -s --server         : Login server name or IP") <<
+        _("  -s --server <arg>         : Login server name or IP") <<
         std::endl <<
         // TRANSLATORS: command line help
-        _("  -y --server-type    : Login server type") <<
+        _("  -y --server-type <arg>    : Login server type") <<
         std::endl <<
         // TRANSLATORS: command line help
-        _("  -p --port           : Login server port") <<
+        _("  -p --port <arg>           : Login server port") <<
         std::endl <<
         // TRANSLATORS: command line help
-        _("  -H --update-host    : Use this update host") <<
+        _("  -H --update-host <arg>    : Use this update host") <<
         std::endl <<
         // TRANSLATORS: command line help
-        _("  -D --default        : Choose default character server and "
+        _("  -D --default              : Choose default character server and "
             "character") <<
         std::endl <<
         // TRANSLATORS: command line help
-        _("  -u --skip-update    : Skip the update downloads") <<
+        _("  -u --skip-update          : Skip the update downloads") <<
         std::endl <<
         // TRANSLATORS: command line help
-        _("  -d --data           : Directory to load game data from") <<
+        _("  -d --data <arg>           : Directory to load game data from") <<
         std::endl <<
         // TRANSLATORS: command line help
-        _("  -L --localdata-dir  : Directory to use as local "
+        _("  -L --localdata-dir <arg>  : Directory to use as local "
             "data directory") <<
         std::endl <<
         // TRANSLATORS: command line help
-        _("     --screenshot-dir : Directory to store screenshots") <<
+        _("     --screenshot-dir <arg> : Directory to store screenshots") <<
         std::endl <<
         // TRANSLATORS: command line help
-        _("     --safemode       : Start game in safe mode") <<
+        _("     --safemode             : Start game in safe mode") <<
         std::endl <<
         // TRANSLATORS: command line help
-        _("     --renderer       : Set renderer type") <<
+        _("     --renderer <arg>       : Set renderer type") <<
         std::endl <<
         // TRANSLATORS: command line help
-        _("  -T --tests          : Start testing drivers and "
+        _("  -T --tests                : Start testing drivers and "
             "auto configuring") <<
         std::endl <<
         // TRANSLATORS: command line help
-        _("  -V --validate       : Start validating client data") <<
+        _("  -V --validate             : Start validating client data") <<
+        std::endl <<
+        // TRANSLATORS: command line help
+        _("  -S --uniqueSession        : Disables back to login "
+            "(Launcher/Vault/Steam only option!)") <<
         std::endl
 #ifdef USE_OPENGL
         <<
         // TRANSLATORS: command line help
-        _("  -O --no-opengl      : Disable OpenGL for this session") <<
+        _("  -O --no-opengl            : Disable OpenGL for this session") <<
         std::endl
 #endif  // USE_OPENGL
         ;
