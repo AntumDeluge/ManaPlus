@@ -1,3 +1,3 @@
 cd run
-./bin/manaplus
+./bin/manaplus $*
 cd ..

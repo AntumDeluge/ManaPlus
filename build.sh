@@ -6,7 +6,7 @@ autoreconf -i
 ./configure --prefix=$dir/run \
 --datadir=$dir/run/share/games \
 --bindir=$dir/run/bin \
---mandir=$dir/run/share/man
+--mandir=$dir/run/share/man $*
 
 cd po
 make update-gmo
