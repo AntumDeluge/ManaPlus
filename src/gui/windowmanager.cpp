@@ -227,7 +227,14 @@ void WindowManager::updateTitle()
     if (settings.login.empty())
         str = settings.serverName;
     else
-        str.append(settings.login).append(" ").append(settings.serverName);
+    {
+        // dont show ugly account names in title, use "Session" insteed.
+        if (settings.options.uniqueSession)
+            str.append("Session ");
+        else
+            str.append(settings.login);
+        str.append(" ").append(settings.serverName);
+    }
     if (str.empty())
     {
         settings.windowCaption = strprintf("%s %s",
