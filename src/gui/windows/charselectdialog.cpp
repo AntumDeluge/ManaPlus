@@ -25,6 +25,7 @@
 #include "client.h"
 #include "configuration.h"
 #include "pincodemanager.h"
+#include "settings.h"
 
 #include "listeners/charrenamelistener.h"
 
@@ -93,14 +94,17 @@ CharSelectDialog::CharSelectDialog(LoginData &data) :
     mSmallScreen(mainGraphics->getWidth() < 470
                  || mainGraphics->getHeight() < 370)
 {
-    setCloseButton(true);
+    setCloseButton(!settings.options.uniqueSession);
     setFocusable(true);
 
     ContainerPlacer placer(nullptr, nullptr);
     placer = getPlacer(0, 0);
 
-    placer(0, 0, mSwitchLoginButton, 1, 1);
-
+    // disable logout using -S
+    if (!settings.options.uniqueSession)
+    {
+        placer(0, 0, mSwitchLoginButton, 1, 1);
+    }
     int n = 1;
     placer(n, 0, mChangePasswordButton, 1, 1);
     n ++;
@@ -371,8 +375,9 @@ void CharSelectDialog::keyPressed(KeyEvent &event)
     {
         case InputAction::GUI_CANCEL:
             event.consume();
-            action(ActionEvent(mSwitchLoginButton,
-                mSwitchLoginButton->getActionEventId()));
+            if (!settings.options.uniqueSession)
+                action(ActionEvent(mSwitchLoginButton,
+                    mSwitchLoginButton->getActionEventId()));
             break;
 
         case InputAction::GUI_RIGHT:

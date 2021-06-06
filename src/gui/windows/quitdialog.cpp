@@ -24,6 +24,7 @@
 
 #include "client.h"
 #include "configuration.h"
+#include "settings.h"
 #include "soundmanager.h"
 
 #include "const/sound.h"
@@ -88,8 +89,11 @@ QuitDialog::QuitDialog(QuitDialog **const pointerToMe) :
     {
         // Only added if we are connected to an accountserver or gameserver
         placeOption(placer, mLogoutQuit);
-        placeOption(placer, mSwitchAccountServer);
-
+        if(!settings.options.uniqueSession)
+        {
+            // Only shown if we are not in a uniqueSession
+            placeOption(placer, mSwitchAccountServer);
+        }
         // Only added if we are connected to a gameserver
         if (state == State::GAME)
             placeOption(placer, mSwitchCharacter);
