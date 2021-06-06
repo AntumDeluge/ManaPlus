@@ -24,6 +24,7 @@
 
 #include "client.h"
 #include "logger.h"
+#include "settings.h"
 
 #include "net/messagein.h"
 
@@ -77,6 +78,20 @@ void GeneralRecv::processConnectionProblem(Net::MessageIn &msg)
         case 5:
             // TRANSLATORS: error message
             errorMessage = _("Sorry, you are underaged.");
+            break;
+        // all launcher (-S) cases should be added here (exitcode = code)
+        case 7:
+            if (settings.options.uniqueSession)
+            {
+                settings.exitcode = code;
+                client->setState(State::EXIT);
+                return;
+            }
+            else
+            {
+                // TRANSLATORS: error message
+                errorMessage = _("Unique Session required.");
+            }
             break;
         case 8:
             // TRANSLATORS: error message

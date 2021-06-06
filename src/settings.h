@@ -96,7 +96,8 @@ class Settings final
             uselonglivesprites(false),
             unknownSkillsAutoTab(true),
             enableNewMailSystem(true),
-            showButtonIcons(false)
+            showButtonIcons(false),
+            exitcode(0)
         { }
 
         A_DELETE_COPY(Settings)
@@ -163,6 +164,7 @@ class Settings final
         bool unknownSkillsAutoTab;
         bool enableNewMailSystem;
         bool showButtonIcons;
+        int exitcode;
 };
 
 extern Settings settings;

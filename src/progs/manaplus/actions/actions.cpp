@@ -1236,9 +1236,14 @@ impHandler0(cacheInfo)
 
 impHandler0(disconnect)
 {
-    if (gameHandler != nullptr)
-        gameHandler->disconnect2();
-    return true;
+    if (!settings.options.uniqueSession)
+    {
+        if (gameHandler != nullptr)
+            gameHandler->disconnect2();
+        return true;
+    }
+    else
+        return false;
 }
 
 impHandler(undress)

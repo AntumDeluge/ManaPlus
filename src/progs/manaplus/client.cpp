@@ -1700,7 +1700,7 @@ int Client::gameExec()
         PROFILER_END();
     }
 
-    return 0;
+    return settings.exitcode;
 }
 
 void Client::optionChanged(const std::string &name)

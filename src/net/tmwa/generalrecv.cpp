@@ -24,6 +24,8 @@
 
 #include "client.h"
 #include "logger.h"
+#include "settings.h"
+
 
 #include "net/messagein.h"
 
@@ -69,6 +71,21 @@ void GeneralRecv::processConnectionProblem(Net::MessageIn &msg)
         case 3:
             // TRANSLATORS: error message
             errorMessage = _("Speed hack detected.");
+            break;
+        // all launcher (-S) cases should be added here (exitcode = code)
+        case 7:
+            if (settings.options.uniqueSession)
+            {
+                settings.exitcode = code;
+                client->setState(State::EXIT);
+                return;
+            }
+            else
+            {
+                // TRANSLATORS: error message
+                errorMessage = _("Wrong Argument set! "
+                    "(launcher option)");
+            }
             break;
         case 8:
             // TRANSLATORS: error message
