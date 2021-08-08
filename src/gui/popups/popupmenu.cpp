@@ -1513,10 +1513,13 @@ void PopupMenu::handleLink(const std::string &link,
         replaceAll(cmd, "'ITEMCOLOR'", toString(toInt(mItemColor, int)));
         replaceAll(cmd, "'BEINGTYPEID'", toString(CAST_S32(mType)));
         replaceAll(cmd, "'BEINGSUBTYPEID'", toString(CAST_S32(mSubType)));
-        replaceAll(cmd, "'PLAYER'", localPlayer->getName());
-        replaceAll(cmd, "'EPLAYER'", escapeString(localPlayer->getName()));
-        replaceAll(cmd, "'PLAYERX'", toString(localPlayer->getTileX()));
-        replaceAll(cmd, "'PLAYERY'", toString(localPlayer->getTileY()));
+        if (localPlayer != nullptr)
+        {
+            replaceAll(cmd, "'PLAYER'", localPlayer->getName());
+            replaceAll(cmd, "'EPLAYER'", escapeString(localPlayer->getName()));
+            replaceAll(cmd, "'PLAYERX'", toString(localPlayer->getTileX()));
+            replaceAll(cmd, "'PLAYERY'", toString(localPlayer->getTileY()));
+        }
         if (mItemIndex >= 0)
             replaceAll(cmd, "'INVINDEX'", toString(mItemIndex));
         else
