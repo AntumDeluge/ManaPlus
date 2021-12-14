@@ -1159,6 +1159,7 @@ void ItemContainer::adjustHeight()
     }
     else
     {
+        updateMatrix();
         mDrawRows = mGridRows;
     }
     setHeight(maxRows * mBoxHeight);
