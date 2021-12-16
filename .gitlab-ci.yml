@@ -318,6 +318,7 @@ linters:
   - ./tools/ci/jobs/imagemagiccheck.sh
   - ./tools/ci/jobs/cpplint.sh
   - ./tools/ci/jobs/nsiqcppstyle.sh
+  image: debian:buster
   <<: *job-push
   variables:
     PACKAGES: python wget pngcheck imagemagick git grep
