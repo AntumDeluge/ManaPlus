@@ -1204,6 +1204,9 @@ void replaceItemLinks(std::string &msg)
         if (start2 + 1 != end &&
             end != std::string::npos)
         {
+            // excludes timestamps to get parsed
+            if (msg[start2 + 3] == ':')
+                return;
             // Catch multiple embeds and ignore them
             // so it doesn't crash the client.
             while ((msg.find('[', start2 + 1) != std::string::npos) &&
