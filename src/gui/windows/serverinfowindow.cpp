@@ -87,8 +87,8 @@ ServerInfoWindow::~ServerInfoWindow()
 void ServerInfoWindow::handleLink(const std::string &link,
                                   MouseEvent *const event A_UNUSED)
 {
-    if (strStartWith(link, "http://") ||
-        strStartWith(link, "https://"))
+    if (strStartWith(link, "http://") || strStartWith(link, "https://") ||
+        strStartWith(link, "ftp://"))
     {
         openBrowser(link);
     }

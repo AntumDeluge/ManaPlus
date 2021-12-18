@@ -187,7 +187,8 @@ void ItemLinkHandler::handleLink(const std::string &link,
     if (link.empty())
         return;
 
-    if (strStartWith(link, "http://") || strStartWith(link, "https://"))
+    if (strStartWith(link, "http://") || strStartWith(link, "https://") ||
+        strStartWith(link, "ftp://"))
     {
         handleHttpLink(link, event);
     }

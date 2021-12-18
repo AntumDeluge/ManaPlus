@@ -75,8 +75,8 @@ std::string BrowserBoxTools::replaceLinkCommands(const std::string &link)
 
     std::string data = link;
 
-    if (strStartWith(data, "http://") ||
-        strStartWith(data, "https://"))
+    if (strStartWith(data, "http://") || strStartWith(data, "https://") ||
+        strStartWith(data, "ftp://"))
     {
         return data;
     }

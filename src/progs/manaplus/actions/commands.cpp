@@ -724,7 +724,8 @@ impHandler(url)
     if (event.tab != nullptr)
     {
         std::string url1 = event.args;
-        if (!strStartWith(url1, "http") && !strStartWith(url1, "?"))
+        if (!strStartWith(url1, "http") && !strStartWith(url1, "ftp") &&
+            !strStartWith(url1, "?"))
             url1 = "http://" + url1;
         std::string str(strprintf("[@@%s |%s@@]",
             url1.c_str(), event.args.c_str()));
@@ -737,7 +738,7 @@ impHandler(url)
 impHandler(openUrl)
 {
     std::string url = event.args;
-    if (!strStartWith(url, "http"))
+    if (!strStartWith(url, "http") && !strStartWith(url, "ftp"))
         url = "http://" + url;
     openBrowser(url);
     return true;
