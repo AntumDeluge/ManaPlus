@@ -1456,6 +1456,8 @@ impHandler0(serverUnIgnoreAll)
 
 PRAGMA6(GCC diagnostic push)
 PRAGMA6(GCC diagnostic ignored "-Wnull-dereference")
+PRAGMA11(GCC diagnostic push)
+PRAGMA11(GCC diagnostic ignored "-Warray-bounds")
 impHandler0(error)
 {
     int *const ptr = nullptr;
@@ -1463,6 +1465,7 @@ impHandler0(error)
 //    logger->log("test %d", *ptr);
     exit(1);
 }
+PRAGMA11(GCC diagnostic pop)
 PRAGMA6(GCC diagnostic pop)
 
 impHandler(dumpGraphics)

@@ -210,6 +210,12 @@
 #define PRAGMA8(str)
 #endif  // GCC_VERSION > 80000
 
+#if GCC_VERSION >= 110000
+#define PRAGMA11(str) _Pragma(#str)
+#else  // GCC_VERSION > 110000
+#define PRAGMA11(str)
+#endif  // GCC_VERSION > 110000
+
 #ifdef __clang__
 #define PRAGMACLANG(str) _Pragma(#str)
 #if CLANG_VERSION >= 50000
