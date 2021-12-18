@@ -521,6 +521,9 @@ void InventoryWindow::action(const ActionEvent &event)
                 Item *const item = mInventory->getItem(i);
                 if (item == nullptr)
                     continue;
+                if (item->isEquipped() == Equipped_true ||
+                    PlayerInfo::isItemProtected(item->getId()))
+                    continue;
                 inventoryHandler->moveItem2(InventoryType::Inventory,
                     item->getInvIndex(),
                     item->getQuantity(),
