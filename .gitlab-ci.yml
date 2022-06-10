@@ -380,7 +380,9 @@ gcov_gcc6:
     expire_in: 2 days
     name: ${CI_JOB_NAME}-${CI_COMMIT_REF_NAME}-${CI_COMMIT_SHA}
     reports:
-      cobertura: coverage/gcc-6.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage/gcc-6.xml
   tags:
     - docker
 
