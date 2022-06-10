@@ -6,7 +6,7 @@ Version: 1.9.3.23        Date: 2019-03-23
 
 ### Build status
 
- - ManaPlus CI: [![gitlab build status](https://gitlab.com/themanaworld/manaplus/manaplus/badges/master/pipeline.svg?key_text=master)](https://gitlab.com/themanaworld/manaplus/manaplus/commits/master)
+ - ManaPlus CI: [![gitlab build status](https://git.themanaworld.org/mana/plus/badges/master/pipeline.svg?key_text=master)](https://git.themanaworld.org/mana/plus/commits/master)
 
  - Downloads: [![gitlab windows build](https://gitlab.com/themanaworld/manaplus/docker-windows-builder/badges/master/pipeline.svg?key_text=Windows+Build&key_width=150px)](https://gitlab.com/themanaworld/manaplus/docker-windows-builder/commits/master),
  [![gitlab appimg build](https://gitlab.com/themanaworld/manaplus/appimg-builder/badges/master/pipeline.svg?key_text=AppImg+Build&key_width=150px)](https://gitlab.com/themanaworld/manaplus/appimg-builder/commits/master),
@@ -23,7 +23,7 @@ Azure CI: [![Build Status macosx](https://dev.azure.com/manaplus/ManaPlus/_apis/
           [![Build Status windows](https://dev.azure.com/manaplus/ManaPlus/_apis/build/status/ManaPlus%20main)](https://dev.azure.com/manaplus/ManaPlus/_build/latest?definitionId=1)
 -->
 
- - Coverage: ![coverage report](https://gitlab.com/themanaworld/manaplus/manaplus/badges/master/coverage.svg) <!-- no pipeline rn -->
+ - Coverage: ![coverage report](https://git.themanaworld.org/mana/plus/badges/master/coverage.svg) <!-- no pipeline rn -->
 
  - Doxygen: ![doxygen](https://img.shields.io/badge/Docs-Doxygen-blue.svg) <!-- no pipeline rn -->
 
@@ -171,7 +171,7 @@ Whispers:
 
 If you're having issues with this client, feel free to report them to us.
 You can report on [![forum](https://img.shields.io/badge/forum-forums.themanaworld.org-yellow.svg)](http://forums.themanaworld.org/viewforum.php?f=12),
-[![Issues](https://badgen.net/gitlab/open-issues/themanaworld%2fmanaplus/manaplus?label=Issues)](https://gitlab.com/themanaworld/manaplus/manaplus/issues/),
+[![Issues](https://badgen.net/gitlab/open-issues/themanaworld%2fmanaplus/manaplus?label=Issues)](https://git.themanaworld.org/mana/plus/issues/),
 [![IRC](https://img.shields.io/badge/IRC-FreeNode/germantmw-yellow.svg)](webchat.freenode.net/?channels=germantmw) or
 ![discord](https://shields.io/discord/775612630836445206.svg?label=Discord)
 

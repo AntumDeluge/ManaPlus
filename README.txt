@@ -7,11 +7,11 @@ THE MANA PLUS CLIENT
   - See AUTHORS file for a list
 
  Build status:
-  ManaPlus CI: https://gitlab.com/themanaworld/manaplus/manaplus/badges/master/pipeline.svg
+  ManaPlus CI: https://git.themanaworld.org/mana/plus/badges/master/pipeline.svg
   Windows: https://gitlab.com/themanaworld/manaplus/docker-windows-builder/badges/master/pipeline.svg
   AppImg: https://gitlab.com/themanaworld/manaplus/appimg-builder/badges/master/pipeline.svg
   deb: https://gitlab.com/themanaworld/manaplus/appimg-builder/badges/master/pipeline.svg
-  Coverage: https://gitlab.com/themanaworld/manaplus/manaplus/badges/master/coverage.svg
+  Coverage: https://git.themanaworld.org/mana/plus/badges/master/coverage.svg
   Doxygen: http://stats.manaplus.org/docs/index.html
   Coverity: https://scan.coverity.com/projects/manaplus
 
@@ -157,7 +157,7 @@ Other:
 
 If you're having issues with this client, feel free to report them to us.
 You can report on forum (http://forums.themanaworld.org/viewforum.php?f=12),
-bugtracker (https://gitlab.com/themanaworld/manaplus/manaplus/issues/) or IRC on irc.freenode.net in the #germantmw channel.
+bugtracker (https://git.themanaworld.org/mana/plus/issues/) or IRC on irc.freenode.net in the #germantmw channel.
 
 If you have feedback about a specific game that uses the ManaPlus client, be sure
 to contact the developers of the game instead.
