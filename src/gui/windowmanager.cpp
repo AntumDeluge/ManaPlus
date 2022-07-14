@@ -443,11 +443,11 @@ void WindowManager::setIcon()
     if (icon)
     {
 #ifdef WIN64
-        SetClassLongPtr(pInfo.window,
+        SetClassLongPtr(pInfo.info.win.window,
             GCLP_HICON,
             reinterpret_cast<LONG_PTR>(icon));
 #else  // WIN64
-        SetClassLong(pInfo.window,
+        SetClassLong(pInfo.info.win.window,
             GCL_HICON,
             reinterpret_cast<LONG>(icon));
 #endif  // WIN64

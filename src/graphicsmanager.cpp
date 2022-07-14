@@ -686,7 +686,7 @@ void GraphicsManager::updatePlanformExtensions()
         if (!mwglGetExtensionsString)
             return;
 
-        HDC hdc = GetDC(info.window);
+        HDC hdc = GetDC(info.info.win.window);
         if (hdc)
         {
             const char *const extensions = mwglGetExtensionsString(hdc);
@@ -1667,7 +1667,7 @@ void GraphicsManager::detectPixelSize()
     if (SDL::getWindowWMInfo(mainGraphics->getWindow(), &info))
     {
 #ifdef WIN32
-        HDC hdc = GetDC(info.window);
+        HDC hdc = GetDC(info.info.win.window);
         if (hdc)
         {
 //            SetProcessDPIAware();
