@@ -29,6 +29,7 @@ SET(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/CMake/Modules)
 FIND_PACKAGE(Gettext)
 
 OPTION(WITH_OPENGL "Enable OpenGL support" ON)
+OPTION(USE_SDL2 "Build with SDL 2.0 instead of 1.2" OFF)
 OPTION(ENABLE_NLS "Enable building of tranlations" ON)
 OPTION(ENABLE_TMWA "Enable tmwA support" ON)
 
