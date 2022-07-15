@@ -449,11 +449,19 @@ void WindowManager::setIcon()
     if (icon)
     {
 #ifdef WIN64
+#ifdef USE_SDL2
+        SetClassLongPtr(pInfo.info.win.window,
+#else
         SetClassLongPtr(pInfo.window,
+#endif  // USE_SDL2
             GCLP_HICON,
             reinterpret_cast<LONG_PTR>(icon));
 #else  // WIN64
+#ifdef USE_SDL2
+        SetClassLong(pInfo.info.win.window,
+#else
         SetClassLong(pInfo.window,
+#endif  // USE_SDL2
             GCL_HICON,
             reinterpret_cast<LONG>(icon));
 #endif  // WIN64
